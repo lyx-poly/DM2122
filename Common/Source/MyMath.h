@@ -248,8 +248,8 @@ Return a random float between min and max
 	{
 		float num = (max - min) * RandFloat ();
 		return (num + min);
-	}//end of RandFloatMinMax function
-
+	}//end of spheren function
+	
 }//end namespace Math
 
 /******************************************************************************/

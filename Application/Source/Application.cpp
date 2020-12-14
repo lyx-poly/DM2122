@@ -12,6 +12,15 @@
 #include <stdlib.h>
 
 #include "Scene1.h"
+#include "Scene2.h"
+#include "Scene3.h"
+#include "Scene4.h"
+#include "Scene5.h"
+#include "Scene5 - Copy.h"
+#include "Scene6.h"
+#include "Scene7.h"
+#include "Assignment.h"
+#include "SceneA.h"
 
 GLFWwindow* m_window;
 const unsigned char FPS = 60; // FPS of this game
@@ -42,6 +51,11 @@ Application::Application()
 
 Application::~Application()
 {
+}
+
+void resize_callback(GLFWwindow* window, int w, int h)
+{
+	glViewport(0, 0, w, h); //update opengl the new window size
 }
 
 void Application::Init()
@@ -78,7 +92,7 @@ void Application::Init()
 	glfwMakeContextCurrent(m_window);
 
 	//Sets the key callback
-	//glfwSetKeyCallback(m_window, key_callback);
+	glfwSetKeyCallback(m_window, key_callback);
 
 	glewExperimental = true; // Needed for core profile
 	//Initialize GLEW
@@ -95,7 +109,7 @@ void Application::Init()
 void Application::Run()
 {
 	//Main Loop
-	Scene *scene = new Scene1();
+	Scene *scene = new SceneA;
 	scene->Init();
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
